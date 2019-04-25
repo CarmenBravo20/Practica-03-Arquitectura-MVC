@@ -34,7 +34,7 @@ public class ControladorFuncionario {
     }
 
     /**
-     * que le paso un objeto funcionario y le agrego a la lista
+     *  le paso un objeto funcionario y le agrego a la lista
      *
      * @param objeto
      */
@@ -45,7 +45,7 @@ public class ControladorFuncionario {
     }
 
     /**
-     * para lerr busca la lista y retorna si lamisma es igual
+     * para leer busca la lista y retorna si la misma es igual
      *
      * @param codigo
      * @return

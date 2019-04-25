@@ -5,12 +5,7 @@
  */
 package Controlador;
 
-/**
- * @version 1.2
- * @since 2019
- * @author Carmen Bravo
- *
- */
+
 import Modelo.Auto;
 import java.util.SortedSet;
 import java.util.TreeSet;
