@@ -38,5 +38,31 @@ public class Principal {
         ControladorCliente controladorC = new ControladorCliente();
         ControladorAuto controladorA = new ControladorAuto();
         ControladorCamion controladorCa = new ControladorCamion();    
+           do {
+
+            System.out.println("MENU PRINCIPAL");
+            System.out.println("1. CRUD Funcionario");
+            System.out.println("2. CRUD Cliente");
+            System.out.println("3. CRUD Auto");
+            System.out.println("4. CRUD Camion");
+            System.out.println("5. Salir");
+            System.out.println("Selecciona una opción");
+            opcionMenuPrincipal = Sc.nextInt();
+            switch (opcionMenuPrincipal) {
+                case 1:
+
+                    //opcion para el crud para la clase Funcionario
+                    do {
+                        System.out.println("**BIENVENIDO AL MENU DE FUNCIONARIO**");
+                        System.out.println("1. Create");
+                        System.out.println("2. Read");
+                        System.out.println("3. Update");
+                        System.out.println("4. Delete");
+                        System.out.println("5. List");
+                        System.out.println("6. Regresar al menu principal");
+                        System.out.println("Selecciona una opción");
+                        opcionMenuFuncionario = Sc.nextInt();
+
+                        switch (opcionMenuFuncionario) {
 }
 }
