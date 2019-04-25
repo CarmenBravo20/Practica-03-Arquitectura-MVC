@@ -71,15 +71,13 @@ public class ControladorCamion {
    metodo de eliminar lo cual necesitamos el codigo para poder eliminar
    */   
    public void delete(int codigo){
-        for(int i=0;i<list.size();i++){
-            if(list.get(codigo).getCodigo()==codigo){
+        
            list.remove(codigo);
         
        
    }
             
-  }
-}
+ 
    /**
     * metodo de listar
     */

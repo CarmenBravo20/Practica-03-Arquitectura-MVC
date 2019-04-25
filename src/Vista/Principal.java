@@ -9,6 +9,10 @@ import Controlador.ControladorAuto;
 import Controlador.ControladorCamion;
 import Controlador.ControladorCliente;
 import Controlador.ControladorFuncionario;
+import Modelo.Auto;
+import Modelo.Camion;
+import Modelo.Cliente;
+import Modelo.Funcionario;
 import java.util.Scanner;
 
 /**
@@ -347,6 +351,7 @@ public class Principal {
                     break;
                 case 4:
                     do {
+                        System.out.println("**********************************");
                         System.out.println("**BIENVENIDO AL MENU DE Camion**");
                         System.out.println("1. Create");
                         System.out.println("2. Read");
@@ -354,8 +359,93 @@ public class Principal {
                         System.out.println("4. Delete");
                         System.out.println("5. List");
                         System.out.println("6. Regresar al menu principal");
-                        System.out.println("Selecciona una opción");
+                        System.out.println("Seleccione una opción");
                         opcionMenuCamion = Sc.nextInt();
+                        
+                            switch (opcionMenuCamion) {
+                            case 1:
+
+                                System.out.println("********************************");
+                                System.out.println("Ingrese el espacio del Camion: ");
+                                String espacio = scanner.nextLine();
+                                System.out.println("Ingrese la cantidad de carga : ");
+                                double carga = Sc.nextDouble();
+                                System.out.println("Ingrese el peso tara de su Camion");
+                                double PesoTara = Sc.nextDouble();
+                                System.out.println("Ingresar la marca de su auto");
+                                String marca = scanner.nextLine();
+                                System.out.println("Ingresar el color de su auto");
+                                String color = scanner.nextLine();
+                                System.out.println("Ingresar el modelo de su auto");
+                                String modelo = scanner.nextLine();
+                                System.out.println("Ingresar la placa de su auto");
+                                String placa = scanner.nextLine();
+                                System.out.println("Ingresar el nombre de consesionario de vehiculos");
+                                String Consesionario = scanner.nextLine();
+                                System.out.println("Ingresar la direccion del consesionario de vehiculos");
+                                String direc = scanner.nextLine();
+                                Camion camion = new Camion(espacio, carga, PesoTara, marca, color, modelo, placa, Consesionario, direc);
+                                controladorCa.create(camion);
+                                break;
+                            case 2:
+                                System.out.println("********************************");
+                                System.out.println("Ingrese el codigo que desee leer");
+                                System.out.println(controladorCa.read(Sc.nextInt()));
+
+                                break;
+                            case 3:
+                                System.out.println("*************************************");
+                                System.out.println("Ingrese el codigo que desee modificar");
+                                int codigo= Sc.nextInt();
+                                System.out.println("Ingrese el espacio del Camion: ");
+                                espacio = scanner.nextLine();
+                                System.out.println("Ingrese la cantidad de carga : ");
+                                carga = Sc.nextDouble();
+                                System.out.println("Ingrese el peso tara de su Camion");
+                                PesoTara = Sc.nextDouble();
+                                System.out.println("Ingresar la marca de su auto");
+                                marca = scanner.nextLine();
+                                System.out.println("Ingresar el color de su auto");
+                                color = scanner.nextLine();
+                                System.out.println("Ingresar el modelo de su auto");
+                                modelo = scanner.nextLine();
+                                System.out.println("Ingresar la placa de su auto");
+                                placa = scanner.nextLine();
+                                System.out.println("Ingresar el nombre de consesionario de vehiculos");
+                                Consesionario = scanner.nextLine();
+                                System.out.println("Ingresar la direccion del consesionario de vehiculos");
+                                direc = scanner.nextLine();
+                                 camion = new Camion(espacio, carga, PesoTara, marca, color, modelo, placa, Consesionario, codigo, direc);
+                                controladorCa.update(camion);
+
+                                break;
+
+                            case 4:
+                                System.out.println("***********************************************");
+                                System.out.println("Ingrese el codigo delCamion que desea eliminar ");
+                                 codigo = Sc.nextInt();
+                                controladorCa.delete(codigo);
+
+                                break;
+                            case 5:
+                                System.out.println("***************");
+                                controladorCa.listar();
+                                break;
+
+                            case 6:
+                                //regresar
+                                System.out.println("Regresando al menu principal");
+                                break;
+                        }      
+                                
+                    } while (opcionMenuCamion != 6);
+                        break;
+                      case 5:
+                    //opcion para salir
+                    System.out.println("Gracias !!!");
+                    break;
+            }
+        }while(opcionMenuPrincipal != 5);
 
             }
         }
