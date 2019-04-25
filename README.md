@@ -23,7 +23,7 @@ realizados a GitHub).
 
 3. Crear un paquete para los controladores y un paquete para la vista.
 
-![14 (2)](https://user-images.githubusercontent.com/49033767/56718430-5a0f6800-6704-11e9-9aad-abcd6ee45e95.jpg)
+![6298 (2)](https://user-images.githubusercontent.com/49033767/56722092-ef622a80-670b-11e9-9081-035089fee31d.jpg)
 
 4. Crear un controlador por cada clase hija. En total, cuatro controladores.
 
