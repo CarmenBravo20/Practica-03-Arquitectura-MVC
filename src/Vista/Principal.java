@@ -310,7 +310,7 @@ public class Principal {
                                 auto = scanner.nextLine();
                                 System.out.println("Ingrese la capacidad de su auto");
                                 capacidad = scanner.nextLine();
-                                System.out.println("la comodidad de su auto:");
+                                System.out.println("Ingrese la comodidad de su auto:");
                                 comodidad = scanner.nextLine();
                                 System.out.println("Su auto es descapotable");
                                 descapotable = scanner.nextLine();
