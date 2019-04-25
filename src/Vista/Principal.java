@@ -39,6 +39,7 @@ public class Principal {
         ControladorCamion controladorCa = new ControladorCamion();
         do {
 
+            System.out.println("*******************");
             System.out.println("**MENU PRINCIPAL**");
             System.out.println("1. CRUD Funcionario");
             System.out.println("2. CRUD Cliente");
@@ -52,6 +53,7 @@ public class Principal {
 
                     //opcion para el crud para la clase Funcionario
                     do {
+                        System.out.println("**************************************");
                         System.out.println("**BIENVENIDO AL MENU DE FUNCIONARIO**");
                         System.out.println("1. Create");
                         System.out.println("2. Read");
@@ -151,6 +153,7 @@ public class Principal {
                 case 2:
                     //opcion para el crud para la clase cliente
                     do {
+                        System.out.println("**********************************");
                         System.out.println("**BIENVENIDO AL MENU DE CLIENTE**");
                         System.out.println("1. Create");
                         System.out.println("2. Read");
@@ -241,6 +244,118 @@ public class Principal {
 
                     } while (opcionMenuCliente != 6);
                     break;
+                     case 3:
+
+                    //opcion para el crud para la clase Auto
+                    do {
+                        System.out.println("******************************");
+                        System.out.println("**BIENVENIDO AL MENU DE AUTO**");
+                        System.out.println("1. Create");
+                        System.out.println("2. Read");
+                        System.out.println("3. Update");
+                        System.out.println("4. Delete");
+                        System.out.println("5. Lista Ordenada");
+                        System.out.println("6. Regresar al menu principal");
+                        System.out.println("Selecciona una opción");
+                        opcionMenuAuto = Sc.nextInt();
+
+                        switch (opcionMenuAuto) {
+                            case 1:
+
+                                System.out.println("******************************************************");
+                                System.out.println("Ingrese la direccion de Consesionario de Vehiculos : ");
+                                String direccion1 = scanner.nextLine();
+                                System.out.println("El nombre del consesionario de Vehiculos: ");
+                                String nombreC = scanner.nextLine();
+                                System.out.println("Ingrese el auto que tiene");
+                                String auto = scanner.nextLine();
+                                System.out.println("Ingrese la capacidad de su auto");
+                                String capacidad = scanner.nextLine();
+                                System.out.println("la comodidad de su auto:");
+                                String comodidad = scanner.nextLine();
+                                System.out.println("Su auto es descapotable");
+                                String descapotable = scanner.nextLine();
+                                System.out.println("Ingresar la marca de su auto");
+                                String marca = scanner.nextLine();
+                                System.out.println("Ingresar el color de su auto");
+                                String color = scanner.nextLine();
+                                System.out.println("Ingresar el modelo de su auto");
+                                String modelo = scanner.nextLine();
+                                System.out.println("Ingresar la placa de su auto");
+                                String placa = scanner.nextLine();
+                                Auto a = new Auto(capacidad, comodidad, descapotable, marca, color, modelo, placa, nombreC, direccion1);
+                                controladorA.create(a);
+                                
+                                break;
+                            case 2:
+                                System.out.println("**********************************");
+                                System.out.println("Ingrese el codigo que desee leer");
+                                System.out.println(controladorA.read(Sc.nextInt()));
+
+                                break;
+                            case 3:
+                                System.out.println("****************************************************");
+                                System.out.println("Ingrese el codigo que desee modificar");
+                                int codigo= Sc.nextInt();
+
+                                System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
+                                direccion1 = scanner.nextLine();
+                                System.out.println("El nombre del consesionario de Vehiculos: ");
+                                nombreC = scanner.nextLine();
+                                System.out.println("Ingrese el auto que tiene");
+                                auto = scanner.nextLine();
+                                System.out.println("Ingrese la capacidad de su auto");
+                                capacidad = scanner.nextLine();
+                                System.out.println("la comodidad de su auto:");
+                                comodidad = scanner.nextLine();
+                                System.out.println("Su auto es descapotable");
+                                descapotable = scanner.nextLine();
+                                System.out.println("Ingresar la marca de su auto");
+                                marca = scanner.nextLine();
+                                System.out.println("Ingresar el color de su auto");
+                                color = scanner.nextLine();
+                                System.out.println("Ingresar el modelo de su auto");
+                                modelo = scanner.nextLine();
+                                System.out.println("Ingresar la placa de su auto");
+                                placa = scanner.nextLine();
+                                a = new Auto(capacidad, comodidad, descapotable, marca, color, modelo, placa, nombreC, codigo, direccion1);
+                                controladorA.update(a);
+
+                                break;
+
+                            case 4:
+                                System.out.println("****************************************************");
+                                System.out.println("Ingrese el codigo del Auto que desea eliminar ");
+                                 codigo = Sc.nextInt();
+                                controladorA.delete(codigo);
+                                
+                                break;
+                                
+                            case 5:
+                                System.out.println("******************");
+                                controladorA.imprimirListaOrdenada();
+                                
+                                break;
+                                
+                            case 6:
+                                //regresar
+                                System.out.println("Regresando al menu principal");
+                                break;
+                        }
+
+                    } while (opcionMenuAuto != 6);
+                    break;
+                case 4:
+                    do {
+                        System.out.println("**BIENVENIDO AL MENU DE Camion**");
+                        System.out.println("1. Create");
+                        System.out.println("2. Read");
+                        System.out.println("3. Update");
+                        System.out.println("4. Delete");
+                        System.out.println("5. List");
+                        System.out.println("6. Regresar al menu principal");
+                        System.out.println("Selecciona una opción");
+                        opcionMenuCamion = Sc.nextInt();
 
             }
         }
