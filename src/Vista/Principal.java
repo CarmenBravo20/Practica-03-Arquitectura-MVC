@@ -40,13 +40,13 @@ public class Principal {
         ControladorCamion controladorCa = new ControladorCamion();    
            do {
 
-            System.out.println("MENU PRINCIPAL");
+            System.out.println("**MENU PRINCIPAL**");
             System.out.println("1. CRUD Funcionario");
             System.out.println("2. CRUD Cliente");
             System.out.println("3. CRUD Auto");
             System.out.println("4. CRUD Camion");
             System.out.println("5. Salir");
-            System.out.println("Selecciona una opción");
+            System.out.println("Seleccione una opción");
             opcionMenuPrincipal = Sc.nextInt();
             switch (opcionMenuPrincipal) {
                 case 1:
@@ -60,9 +60,94 @@ public class Principal {
                         System.out.println("4. Delete");
                         System.out.println("5. List");
                         System.out.println("6. Regresar al menu principal");
-                        System.out.println("Selecciona una opción");
+                        System.out.println("Seleccione una opción");
                         opcionMenuFuncionario = Sc.nextInt();
 
-                        switch (opcionMenuFuncionario) {
+                                    switch (opcionMenuFuncionario) {
+                            case 1:
+                                System.out.println("****************************************************");
+                                System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
+                                String direccion = scanner.nextLine();
+                                System.out.println("Ingrese el nombre del Consesionario de vehiculos: ");
+                                String nombreCon = scanner.nextLine();
+                                System.out.println("Ingrese su Cedula:");
+                                String cedula = scanner.nextLine();
+                                System.out.println("Ingrese su Nombre:");
+                                String nombre = scanner.nextLine();
+                                System.out.println("Ingrese su Apellido:");
+                                String apellido = scanner.nextLine();
+                                System.out.println("Ingrese su cargo:");
+                                String cargo = scanner.nextLine();
+                                System.out.println("Ingrese su salario");
+                                double salario = Sc.nextDouble();
+                                System.out.println("Ingrese su area de trabajo:");
+                                String area = scanner.nextLine();
+                                System.out.println("Ingrese su horario:");
+                                String horario = scanner.nextLine();
+                                System.out.println("Ingresar su telefono");
+                                String telefono = scanner.nextLine();
+
+                                Funcionario fuc = new Funcionario(cargo, salario, area, horario, cedula, nombre, apellido, telefono, nombreCon, direccion);
+                                controladorF.create(fuc);
+
+                                break;
+                            case 2:
+                                System.out.println("*********************************");
+                                System.out.println("Ingrese el codigo que desee leer");
+                                System.out.println(controladorF.read(Sc.nextInt()));
+
+                                break;
+                            case 3:
+                                System.out.println("**********************************");
+                                System.out.println("Ingrese el codigo que desee modificar");
+                                int codigo= Sc.nextInt();
+
+                                System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
+                                direccion = scanner.nextLine();
+                                System.out.println("Ingrese el nombre del Consesionario de vehiculos: ");
+                                nombreCon = scanner.nextLine();
+                                System.out.println("Ingrese su Cedula:");
+                                cedula = scanner.nextLine();
+                                System.out.println("Ingrese su Nombre:");
+                                nombre = scanner.nextLine();
+                                System.out.println("Ingrese su Apellido:");
+                                apellido = scanner.nextLine();
+                                System.out.println("Ingrese su cargo:");
+                                cargo = scanner.nextLine();
+                                System.out.println("Ingrese su salario");
+                                salario = Sc.nextDouble();
+                                System.out.println("Ingrese su area de trabajo:");
+                                area = scanner.nextLine();
+                                System.out.println("Ingrese su horario:");
+                                horario = scanner.nextLine();
+                                System.out.println("Ingresar su telefono");
+                                telefono = scanner.nextLine();
+
+                                fuc = new Funcionario(cargo, salario, area, horario, cedula, nombre, apellido, telefono, nombreCon, codigo, direccion);
+
+                                controladorF.update(fuc);
+
+                                break;
+                            case 4:
+                                System.out.println("********************************************");
+                                System.out.println("Ingrese el codigo del Funcionario que desea eliminar ");
+                                codigo = Sc.nextInt();
+                                controladorF.delete(codigo);
+
+                                break;
+                            case 5:
+                                System.out.println("*******************");
+                                controladorF.listar();
+                                break;
+                                
+                            case 6:
+                                    //regresar
+                                System.out.println("Regresando al menu principal");
+                                break;
+                                
+                        }
+
+                    } while (opcionMenuFuncionario != 6);
+                    break;
 }
 }
