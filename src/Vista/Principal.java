@@ -19,8 +19,7 @@ import java.util.Scanner;
  */
 public class Principal {
 
-  public static void main(String[] args) {
-
+    public static void main(String[] args) {
 
         Scanner Sc = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
@@ -37,8 +36,8 @@ public class Principal {
         ControladorFuncionario controladorF = new ControladorFuncionario();
         ControladorCliente controladorC = new ControladorCliente();
         ControladorAuto controladorA = new ControladorAuto();
-        ControladorCamion controladorCa = new ControladorCamion();    
-           do {
+        ControladorCamion controladorCa = new ControladorCamion();
+        do {
 
             System.out.println("**MENU PRINCIPAL**");
             System.out.println("1. CRUD Funcionario");
@@ -63,7 +62,7 @@ public class Principal {
                         System.out.println("Seleccione una opción");
                         opcionMenuFuncionario = Sc.nextInt();
 
-                                    switch (opcionMenuFuncionario) {
+                        switch (opcionMenuFuncionario) {
                             case 1:
                                 System.out.println("****************************************************");
                                 System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
@@ -100,7 +99,7 @@ public class Principal {
                             case 3:
                                 System.out.println("**********************************");
                                 System.out.println("Ingrese el codigo que desee modificar");
-                                int codigo= Sc.nextInt();
+                                int codigo = Sc.nextInt();
 
                                 System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
                                 direccion = scanner.nextLine();
@@ -139,15 +138,109 @@ public class Principal {
                                 System.out.println("*******************");
                                 controladorF.listar();
                                 break;
-                                
+
                             case 6:
-                                    //regresar
+                                //regresar
                                 System.out.println("Regresando al menu principal");
                                 break;
-                                
+
                         }
 
                     } while (opcionMenuFuncionario != 6);
                     break;
-}
-}
+                case 2:
+                    //opcion para el crud para la clase cliente
+                    do {
+                        System.out.println("**BIENVENIDO AL MENU DE CLIENTE**");
+                        System.out.println("1. Create");
+                        System.out.println("2. Read");
+                        System.out.println("3. Update");
+                        System.out.println("4. Delete");
+                        System.out.println("5. List");
+                        System.out.println("6. Regresar al menu principal");
+                        System.out.println("Seleccione una opción");
+                        opcionMenuCliente = Sc.nextInt();
+
+                        switch (opcionMenuCliente) {
+                            case 1:
+                                System.out.println("*****************************************************");
+                                System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
+                                String direccion1 = scanner.nextLine();
+                                System.out.println("Ingrese el nombre del Consesionario de vehiculos: ");
+                                String nombreC = scanner.nextLine();
+                                System.out.println("Ingrese su Cedula:");
+                                String cedula = scanner.nextLine();
+                                System.out.println("Ingrese su Nombre:");
+                                String nombre = scanner.nextLine();
+                                System.out.println("Ingrese su Apellido:");
+                                String apellido = scanner.nextLine();
+                                System.out.println("usted va muy frecuente al consesionario de vehiculos");
+                                String frecuente = scanner.nextLine();
+                                System.out.println("Ingresar su telefono");
+                                String telefono = scanner.nextLine();
+                                System.out.println("Ingresar su forma de pago");
+                                String formaPago = scanner.nextLine();
+                                System.out.println("Ingresar su ruc");
+                                String ruc = scanner.nextLine();
+                                Cliente c = new Cliente(formaPago, ruc, true, cedula, nombre, apellido, telefono, nombreC, direccion1);
+                                controladorC.create(c);
+                                break;
+                            case 2:
+                                System.out.println("********************************");
+                                System.out.println("Ingrese el codigo que desee leer");
+                                System.out.println(controladorC.read(Sc.nextInt()));
+
+                                break;
+                            case 3:
+                                System.out.println("*******************************************");
+                                System.out.println("Ingrese el codigo que desee modificar");
+                                int codigo = Sc.nextInt();
+                                System.out.println("Ingrese la direccion de Consesionario de Vehiculos: ");
+                                direccion1 = scanner.nextLine();
+                                System.out.println("Ingrese el nombre del Consesionario de vehiculos: ");
+                                nombreC = scanner.nextLine();
+                                System.out.println("Ingrese su Cedula:");
+                                cedula = scanner.nextLine();
+                                System.out.println("Ingrese su Nombre:");
+                                nombre = scanner.nextLine();
+                                System.out.println("Ingrese su Apellido:");
+                                apellido = scanner.nextLine();
+                                System.out.println("usted va muy frecuente al consesionario de vehiculos");
+                                frecuente = scanner.nextLine();
+                                System.out.println("Ingresar su telefono");
+                                telefono = scanner.nextLine();
+                                System.out.println("Ingresar su forma de pago");
+                                formaPago = scanner.nextLine();
+                                System.out.println("Ingresar su ruc");
+                                ruc = scanner.nextLine();
+                                c = new Cliente(formaPago, ruc, true, cedula, nombre, apellido, telefono, nombreC, codigo, direccion1);
+
+                                controladorC.update(c);
+
+                                break;
+
+                            case 4:
+                                System.out.println("******************************************************");
+                                System.out.println("Ingrese el codigo del Cliente  que desea eliminar ");
+                                codigo = Sc.nextInt();
+                                controladorC.delete(codigo);
+
+                                break;
+                            case 5:
+                                System.out.println("********************************************************");
+                                controladorC.listar();
+                                break;
+
+                            case 6:
+
+                                //regresar
+                                System.out.println("Regresando al menu principal");
+                                break;
+
+                        }
+
+                    } while (opcionMenuCliente != 6);
+                    break;
+
+            }
+        }
