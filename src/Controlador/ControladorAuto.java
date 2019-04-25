@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Controlador;
-
-
 import Modelo.Auto;
 import java.util.SortedSet;
 import java.util.TreeSet;

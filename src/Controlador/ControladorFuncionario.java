@@ -61,7 +61,7 @@ public class ControladorFuncionario {
         return null;
     }
 
-    //el codigo no se actualiza solo se actualiza los nombre, apellidos,etc porque el codigo es lo primordiar porque sino depues no lo
+    //el codigo no se actualiza solo se actualiza los nombre, apellidos,etc porque el codigo es lo primordiar porque sino despues no lo
     //vamos a encontrar
     public void update(Funcionario objeto) {
         for (int i = 0; i < 10; i++) {

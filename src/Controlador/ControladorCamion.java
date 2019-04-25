@@ -4,20 +4,18 @@
  * and open the template in the editor.
  */
 package Controlador;
-
-
 import Modelo.Camion;
 import java.util.HashMap;
 import java.util.Map;
 
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
  * @version 1.2
  * @since 2019
  * @author Carmen Bravo
- *
  */
 
 // nombre de la clase
@@ -33,7 +31,7 @@ public class ControladorCamion {
    constructor
    */
    public ControladorCamion(){
-       list= new HashMap<Integer,Camion>();
+       list= new TreeMap<Integer,Camion>();
        codigo=0;
        
    }
